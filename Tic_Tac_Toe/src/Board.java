@@ -20,7 +20,9 @@ public class Board {
 				cells[row][col] = new Cell(row, col);
 			}
 		}
+		
 	}
+	
 	
 
 	 /** Return true if it is a draw (i.e., no more EMPTY cells) */ 
