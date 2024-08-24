@@ -28,12 +28,24 @@ public class Board {
 
 	 /** Return true if it is a draw (i.e., no more EMPTY cells) */ 
 	public boolean isDraw() {
-		 return false;
+		 
 		// TODO: Check whether the game has ended in a draw. 
 		// Hint: Use a nested loop (see the constructor for an example). Check whether any of the cells content in the board grid are Player.Empty. If they are, it is not a draw.
 		// Hint: Return false if it is not a draw, return true if there are no empty positions left
-		   
-		
+		int emptyCount = 0;
+			for (int row = 0; row < cells.length; ++row) {
+				for (int col = 0; col < cells[row].length; ++col) {
+					if (cells[row][col].content == Player.Empty  ) {
+						emptyCount ++;
+						
+					}
+				}
+			}
+			if (emptyCount != 0) {
+				return false;
+			}else {
+				return true;
+			}
 
 		
 	}
@@ -46,7 +58,7 @@ public class Board {
 		
 		 // TODO: Check if the player has 3 in the playerCol.
 		 // Hint: Use the row code above as a starting point, remember that it goes cells[row][column] 
-		if(cells[playerCol][0].content == thePlayer && cells[playerCol][1].content == thePlayer && cells[playerCol][2].content == thePlayer )
+		if(cells[0][playerCol].content == thePlayer && cells[1][playerCol].content == thePlayer && cells[2][playerCol].content == thePlayer )
 			return true;
 		
 		 // 3-in-the-diagonal
